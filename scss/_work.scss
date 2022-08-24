@@ -1,0 +1,86 @@
+.work {
+	height: 33vw;
+	position: relative;
+	&::before {
+		position: absolute;
+		content: "";
+		background-image: url(./../img/background/duts.png);
+		background-repeat: no-repeat;
+		transform: rotate(180deg);
+		width: 25vw;
+		height: 40vw;
+		top: -4vw;	
+		left: -4vw;
+	}
+
+	&__container {
+		height: 100%;
+	}
+
+	&__body {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__title {
+		position: relative;
+	}
+
+	&__we-works {
+		position: relative;
+		left: 65px;
+	}
+
+	&__text {
+		width: 23vw;
+
+		color: #000;
+	}
+}
+.title-how {
+	font-weight: 700;
+	font-size: 3.4vw;
+	line-height: .6;
+
+	position: absolute;
+	left: -1vw;
+	top: 2.85vw;
+
+	transform: translateY(-10vw);
+	opacity: 0;
+	transition: all 1s ease;
+
+	&._active {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+.title-we {
+	font-weight: 700;
+	font-size: 5.4vw;
+	line-height: .6;
+
+	transform: translateY(-3vw);
+	opacity: 0;
+	transition: all 1s ease;
+
+	&._active {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+.title-works {
+	font-size: 3.9vw;
+
+	transform: translateY(50px);
+	opacity: 0;
+	transition: all 1s ease;
+
+	&._active {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}

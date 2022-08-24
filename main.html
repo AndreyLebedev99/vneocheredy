@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Rubik:300,regular,500,600,700,800,900$display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Вне очереди</title>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<header class="header" style="margin: 0 auto;">
+			<div class="header__container">
+				<div class="header__row">
+					<div class="header__search copy-blok__search">
+						<input type="text" class="search" style="color: #542a9f" placeholder="Поиск?">
+					</div>
+					<div class="header__question question">
+						<p>Есть Вопросы?</p>
+						<a href="tel: +79046066747">+7 (904) 606-67-47</a>
+					</div>
+					<div class="header__logo">
+						<img src="./img/logo/logo.png" alt="" class="logo">
+					</div>
+					<div class="header__menu">
+						<ul>
+							<li><a href="#work">Как мы работаем</a></li>
+							<li><a href="#">Помощь</a></li>
+							<li><a href="#" data-open="openCart">Корзина</a></li>
+							<li><a href="#" data-open="openLogin">Войти</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="modal-login modal hidden" data-close="close">
+				<div class="modal-login__body modal-body">
+					<div class="modal-login__content modal-content">
+						<div class="modal-login__close modal-close" data-close="close">&#215;</div>
+						<div class="modal-login__header">
+							<ul>
+								<li><a href="#" class="login border-bottom" data-action="login">Войти</a></li>
+								<li><a href="#" class="registration" data-action="registration">Зарегистрироваться</a></li>
+							</ul>
+							<img src="./img/logo/mini-logo.png" alt="">
+						</div>
+						<form id="formLogin" class="form-login" action="#">
+							<div class="modal-login__row">
+								<p>Ваш логин</p>
+								<input type="text" name="username" class="search">
+							</div>
+		
+							<div class="modal-login__row">
+								<p>Ваш пароль</p>
+								<input type="password" name="userpass" class="search">
+							</div>
+		
+							<div class="sign-up">
+								<label class="switch">
+									<input type="checkbox" checked data-slider="active">
+									<span class="slider round"></span>
+									<span class="slider__yes slider-yes-active">YES</span>
+									<span class="slider__no">NO</span>
+								</label>
+								<p>Keep me sign up</p>
+							</div>
+		
+							<div class="line"></div>
+		
+							<div class="block-forgot">
+								<a href="#">Forgot your password</a>
+							</div>
+		
+							<div class="block-btn">
+								<button type="submit">Войти</button>
+							</div>
+						</form>
+		
+						<form id="formRegistration" class="form-registration hidden" action="#">
+							<div class="modal-login__row">
+								<p>Логин</p>
+								<input type="text" name="username" class="search">
+							</div>
+		
+							<div class="modal-login__row">
+								<p>Email</p>
+								<input type="text" name="usermail" class="search">
+							</div>
+		
+							<div class="modal-login__row">
+								<p>Телефон</p>
+								<input type="number" name="usertel" class="search">
+							</div>
+		
+							<div class="modal-login__row">
+								<p>Пароль</p>
+								<input type="password" name="userpass" class="search">
+							</div>
+		
+							<div class="modal-login__row">
+								<p>Повторите пароль</p>
+								<input type="password" name="userpass" class="search">
+							</div>
+		
+							<div class="line"></div>
+		
+							<div class="block-btn">
+								<button type="submit">Зарегистрироваться</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		
+			<div class="modal-cart modal hidden" data-close="close">
+				<div class="modal-cart__body modal-body">
+					<div class="modal-cart__content modal-content">
+		
+						<div class="modal-cart__page1">
+							<div class="modal-cart__close modal-close" data-close="close">&#215;</div>
+		
+							<div class="modal-cart__block">
+								<div class="modal-cart__scroll">
+								</div>
+							</div>
+		
+							<div class="modal-cart__column">
+								<div class="modal-cart__top">
+									<div class="modal-cart__clean">
+										<a href="#" class="modal-btn btn__clean">Очистить корзину</a>
+									</div>
+		
+									<div class="modal-cart__promo">
+										<div>Промокод</div>
+										<input type="password" class="promo__password">
+									</div>
+		
+									<div class="modal-cart__delivery">
+										<div>Доставка</div>
+										<div class="price__delivery">150 руб</div>
+									</div>
+								</div>
+		
+								<div class="modal-cart__bottom">
+									<div class="modal-cart__sum">
+										<div>Сумма заказа</div>
+										<div class="sum__price">0 руб</div>
+									</div>
+		
+									<div class="modal-cart__continue">
+										<a href="#" class="modal-btn btn__continue" data-continue="true">Продолжить</a>
+									</div>
+								</div>
+							</div>
+						</div>
+		
+						<div class="modal-cart__page2 hidden">
+							<div class="modal-cart__close modal-close" data-close="close">&#215;</div>
+							<div class="cart-word">Корзина</div>
+							<div class="modal-cart__body2">
+								<div class="modal-cart__block2"></div>
+								<div class="modal-cart__column">
+									<div class="modal-cart__top">
+										<div>
+											<p>Улица</p>
+											<input type="text" class="addres">
+										</div>
+										<div>
+											<p>Квартира</p>
+											<input type="text" class="addres">
+										</div>
+										<div>
+											<p>Парадная</p>
+											<input type="text" class="addres">
+										</div>
+										<div>
+											<p>Этаж</p>
+											<input type="text" class="addres">
+										</div>
+									</div>
+									<div class="modal-cart__bottom">
+										<div class="back-arrow" data-back="true">
+											<img src="./img/line/back.svg" alt="" data-back="true">
+										</div>
+										<div class="modal-cart__sum">
+											<div>Сумма заказа</div>
+											<div class="sum__price">0 руб</div>
+										</div>
+		
+										<div class="modal-cart__continue">
+											<a href="#" class="modal-btn btn__continue">Оформить заказ</a>
+										</div>
+									</div>
+								</div>
+							</div>
+		
+						</div>
+		
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<section class="slogan">
+				<div class="slogan__container">
+					<div class="slogan__row">
+						<div class="slogan__block anim-items"></div>
+						<div class="slogan__body anim-items">
+							<div class="slogan__text">Получай свои продукты</div>
+							<div class="slogan__title">
+								<div>вне</div>
+								<p>очереди</p>
+							</div>
+							<div class="slogan__button">
+								<a href="./catalog.html" class="slogan__btn">Купить покушать</a>
+							</div>
+
+						</div>
+						<div class="slogan__img">
+							<img src="./img/circles-arm/circle.png" alt="" class="img__circle">
+							<img src="./img/circles-arm/white-circle.png" alt="" class="img__circle-white anim-items">
+							<div class="img__arm  anim-items">
+								<img src="./img/circles-arm/arm.png" alt="" class="rotate-arm ">
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="subtitle">
+				<div class="subtitle__container">
+					<div class="subtitle__go anim-items">Перейти</div>
+					<div class="subtitle__buys anim-items">к покупкам</div>
+				</div>
+
+			</section>
+
+			<section class="carousel swiper">
+				<div class="carousel-slider">
+					<div class="carousel__body swiper-wrapper">
+						<div class="carousel-item swiper-slide">
+							<div class="carousel-icon">
+								<img src="./img/icons/vegetables.svg" alt="" class="carousel__img">
+							</div>
+							<div class="carousel-text">
+								<p>Овощи</p><img src="./img/icons/arrow.svg" alt="">
+							</div>
+						</div>
+						<div class="carousel-item swiper-slide">
+							<div class="carousel-icon">
+								<img src="./img/icons/milk.svg" alt="" class="carousel__img">
+							</div>
+							<div class="carousel-text">
+								<p>Молоко</p><img src="./img/icons/arrow.svg" alt="">
+							</div>
+						</div>
+						<div class="carousel-item swiper-slide">
+							<div class="carousel-icon">
+								<img src="./img/icons/meat.svg" alt="" class="carousel__img">
+							</div>
+							<div class="carousel-text">
+								<p>Мясо</p><img src="./img/icons/arrow.svg" alt="">
+							</div>
+						</div>
+						<div class="carousel-item swiper-slide">
+							<div class="carousel-icon">
+								<img src="./img/icons/fish.svg" alt="" class="carousel__img">
+							</div>
+							<div class="carousel-text">
+								<p>Рыба</p><img src="./img/icons/arrow.svg" alt="">
+							</div>
+						</div>
+						<div class="carousel-item swiper-slide">
+							<div class="carousel-icon">
+								<img src="./img/icons/bottle.svg" alt="" class="carousel__img">
+							</div>
+							<div class="carousel-text">
+								<p>Вода</p><img src="./img/icons/arrow.svg" alt="">
+							</div>
+						</div>
+						<div class="carousel-item swiper-slide">
+							<div class="carousel-icon">
+								<img src="./img/icons/bottle.svg" alt="" class="carousel__img">
+							</div>
+							<div class="carousel-text">
+								<p>Вода</p><img src="./img/icons/arrow.svg" alt="">
+							</div>
+						</div>
+						<div class="carousel-item swiper-slide">
+							<div class="carousel-icon">
+								<img src="./img/icons/bottle.svg" alt="" class="carousel__img">
+							</div>
+							<div class="carousel-text">
+								<p>Вода</p><img src="./img/icons/arrow.svg" alt="">
+							</div>
+						</div>
+						<div class="carousel-item swiper-slide">
+							<div class="carousel-icon">
+								<img src="./img/icons/bottle.svg" alt="" class="carousel__img">
+							</div>
+							<div class="carousel-text">
+								<p>Вода</p><img src="./img/icons/arrow.svg" alt="">
+							</div>
+						</div>
+						<div class="carousel-item swiper-slide">
+							<div class="carousel-icon">
+								<img src="./img/icons/bottle.svg" alt="" class="carousel__img">
+							</div>
+							<div class="carousel-text">
+								<p>Вода</p><img src="./img/icons/arrow.svg" alt="">
+							</div>
+						</div>
+						<div class="carousel-item swiper-slide">
+							<div class="carousel-icon">
+								<img src="./img/icons/bottle.svg" alt="" class="carousel__img">
+							</div>
+							<div class="carousel-text">
+								<p>Вода</p><img src="./img/icons/arrow.svg" alt="">
+							</div>
+						</div>
+						<div class="carousel-item swiper-slide">
+							<div class="carousel-icon">
+								<img src="./img/icons/bottle.svg" alt="" class="carousel__img">
+							</div>
+							<div class="carousel-text">
+								<p>Вода</p><img src="./img/icons/arrow.svg" alt="">
+							</div>
+						</div>
+						<div class="carousel-item swiper-slide">
+							<div class="carousel-icon">
+								<img src="./img/icons/bottle.svg" alt="" class="carousel__img">
+							</div>
+							<div class="carousel-text">
+								<p>Вода</p><img src="./img/icons/arrow.svg" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="carousel-arrow__prev swiper-button-prev"></div>
+					<div class="carousel-arrow__next swiper-button-next"></div>
+				</div>
+				<div class="carousel__background anim-items"></div>
+			</section>
+
+			<section class="work">
+				<a name="work"></a>
+				<div class="work__container" name="how-we-work">
+					<div class="work__body">
+						<div class="work__title">
+							<div class="title-how anim-items" style="transform: rotate(-90deg);">Как</div>
+							<div class="work__we-works">
+								<div class="title-we anim-items">мы</div>
+								<div class="title-works anim-items">работаем</div>
+							</div>
+
+						</div>
+						<div class="work__text">
+							<p>Мы тщательно отбираем поставщиков и продукты для каждого блюда. Все ингредиенты проходят
+								этапы тестов и дегустаций, после чего ложатся в основу нового рецепта. После запуска мы
+								внимательно следим за вашими отзывами и дорабатываем каждый продукт, чтобы он нравился
+								всем.</p>
+							<br>
+							<p>Ежедневно инспектор службы контроля проверяет каждую из наших кухонь на соответствие
+								высоким стандартам качества и чистоты.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="possibility">
+				<div class="possibility__container">
+					<div class="possibility__block anim-items"></div>
+					<div class="possibility__body anim-items">
+						<div class="possibility__cart">
+							<div class="cart__item">
+								<div class="cart__clock">
+									<img src="./img/icons/clock.svg" alt="">
+								</div>
+							</div>
+							<div class="cart__text cart-delivery">
+								<div class="cart__uptext">Доставка от</div>
+								<div class="cart__time">30 минут</div>
+							</div>
+						</div>
+						<div class="possibility__cart cart-reverse">
+							<div class="cart__item">
+								<div class="cart__card">
+									<img src="./img/icons/card.svg" alt="">
+								</div>
+							</div>
+							<div class="cart__text cart-pay">
+								<div class="cart__uptext">Оплата только</div>
+								<div class="cart__map">по карте</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="possibility__mobile">
+						<img src="./img/mobile/iphone.png" alt="" class="possibility__iphone anim-items">
+						<div class="possibility__download anim-items">
+							<img src="./img/logo/logo.png" alt="" class="logo possibility__logo">
+							<a href="#"><img src="./img/download/googleplay.png" alt=""
+									class="possibility__googleplay"></a>
+							<a href="#"><img src="./img/download/appstore.png" alt="" class="possibility__appstore"></a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__row">
+					<div class="footer__search">
+						<input type="text" class="search footer__search" placeholder="Поиск?">
+					</div>
+					<div class="footer__question question">
+						<p>Есть Вопросы?</p>
+						<a href="tel: +79046066747">+7 (904) 606-67-47</a>
+					</div>
+					<div class="footer__menu">
+						<ul>
+							<li><a href="#work">Как мы работаем</a></li>
+							<li><a href="#">Помощь</a></li>
+							<li><a href="#">Корзина</a></li>
+							<li><a href="#" data-open="open">Войти</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<script src="./js/animation.js"></script>
+	<script src="./js/login.js"></script>
+	<script src="./js/slider.js"></script>
+	<script src="./js/counter.js"></script>
+	<script src="./js/calcCartPrice.js"></script>
+	<script src="./js/cart.js"></script>
+	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+	<script src="./js/switch.js"></script>
+</body>
+
+</html>

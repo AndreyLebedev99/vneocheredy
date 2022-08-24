@@ -1,0 +1,99 @@
+.no-scroll {
+	overflow: hidden;
+}
+
+.modal-login {
+	&__content {
+		min-width: 30vw;
+
+		padding: 2vw 3vw 1.5vw;
+	}
+
+	&__close {
+		
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+
+		& ul {
+			display: flex;
+
+			& a {
+				padding: .4vw 0;
+				line-height: 2;
+			}
+
+			& li + li {
+				margin-left: 1.5vw;
+			}
+		}
+
+		& img {
+			width: 9.5vw;
+		}
+	}
+}
+
+.form-login {
+	height: 22vw;
+}
+
+.form-registration {
+	height: 33vw;
+	overflow-y: scroll;
+}
+
+.border-bottom {
+	border-bottom: 2px $maincolor solid;
+}
+
+.modal-login__row {
+	& p {
+		padding: 0 0 .8vw .3vw;
+	}
+	&:not(:last-child) {
+		margin-bottom: .8vw;
+	}
+}
+
+.sign-up {
+	margin: 1.5vw 0 0;
+	display: flex;
+	align-items: center;
+	& p {
+		margin-left: 3.4vw;
+	}
+}
+
+.line {
+	width: 100%;
+	margin: 1.5vw 0;
+	border-bottom: 1px $maincolor solid;
+}
+.block-forgot {
+	margin-bottom: 2.5vw;
+
+	text-align: center;
+	font-weight: 400;
+	
+}
+.block-btn {
+	text-align: center;
+
+	& button {
+		padding: .8vw 2.7vw;
+
+		font-size: 0.8vw;
+		color: #fff;
+		background: $maincolor;
+
+		border-radius: 49vw;
+		cursor: pointer;
+	}
+}
+
+.hidden {
+	display:none;
+}

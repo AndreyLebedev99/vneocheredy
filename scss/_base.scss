@@ -1,0 +1,34 @@
+body {
+	height: 100%;
+	font-family: 'Rubik', sans-serif;
+	font-size: .8vw;
+	font-weight: 500;
+	line-height: 1.1333;
+	
+	color: $maincolor;
+
+	overflow-x: hidden;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.wrapper {
+	height: 100%;
+}
+
+.scroll {
+	&::-webkit-scrollbar {
+		width: .2vw;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #FFDF4C;
+	}
+
+	&::-webkit-scrollbar-track {
+		margin-top: 6vh;
+	}
+}

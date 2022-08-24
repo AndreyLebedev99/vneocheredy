@@ -1,0 +1,58 @@
+.header {
+	background-color: #fff;
+	position: relative;
+	z-index: 99;
+	&__row {
+		padding: .7vw 0;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__search {
+		width: 15vw;
+
+		& .search {
+			font-size: 0.8vw;
+			padding: 4% 6%;
+		}
+	}
+
+	&__question {
+		& p {
+			padding-bottom: 15%;
+		}
+	}
+
+	&__logo {
+		& img {
+			width: 10vw;
+		}
+	}
+
+	&__menu {
+		& ul {
+			display: flex;
+		}
+
+		& li+li {
+			padding-left: 2vw;
+		}
+	}
+}
+.search {
+	font-size: .8vw;
+	color: $maincolor;
+
+	padding: .5vw 1vw;
+
+	width: 100%;
+
+	border: 1.5px solid $maincolor;
+	border-radius: 6vw;
+
+	&::placeholder {
+		color: $maincolor;
+	}
+}

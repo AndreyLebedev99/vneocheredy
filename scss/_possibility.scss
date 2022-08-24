@@ -1,0 +1,211 @@
+.possibility {
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__block {
+			position: absolute;
+			left: 0;
+			width: 50vw;
+			height: 35vw;
+	
+			background: linear-gradient(90deg, #FFE049 35%, #FED15C 100%);
+			box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.25);
+			border-radius: 0 21vw 21vw 0;
+	
+			z-index: 1;
+
+			transform: translate(-10vw, 0px);
+			opacity: 0; 
+			transition: all 1s ease 0s;
+	
+			&._active {
+				transform: translate(0px, 0px);
+				opacity: 1;
+			}
+		
+	}
+
+	&__body {
+		height: 100%;
+
+		position: relative;
+		z-index: 2;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		gap: 1vw;
+
+		transform: translate(-10vw, 0px);
+		opacity: 0; 
+		transition: all 1s ease 0s;
+
+		&._active {
+			transform: translate(0px, 0px);
+			opacity: 1;
+		}
+	}
+
+	&__cart {
+		max-width: 24vw;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 2vw;
+	}
+}
+
+.possibility {
+	&__mobile {
+		position: relative;
+		
+	}
+
+
+	&__iphone {
+		width: 21vw;
+		position: relative;
+		z-index: 1;
+
+		transform: translateY(5vw);
+		opacity: 0;
+		transition: all 1s ease;
+
+		&._active {
+			transform: translateY(0px);
+			opacity: 1;
+		}
+	}
+
+	&__logo {
+		width: 15vw;
+	}
+
+	&__download {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+
+		position: absolute;
+		top: 4vw;
+		left: 2vw;
+		z-index: 2;
+
+		transform: translateY(5vw);
+		opacity: 0;
+		transition: all 1s ease;
+
+		&._active {
+			transform: translateY(0px);
+			opacity: 1;
+		}
+		}
+
+	&__googleplay {
+		margin: 3.8vw 0 1.5vw;
+		width: 17vw;
+	}
+
+	&__appstore {
+		width: 17vw;
+	}
+}
+
+
+.cart {
+	&__item {
+		width: 10vw;
+		height: 10vw;
+		background-color: #fff;
+		box-shadow: inset 2px 11px 12px -2px rgba(61, 35, 179, .1);
+		border-radius: 1.5vw;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__clock {
+		& img {
+			width: 5.7vw;
+			height: 5.7vw;
+		}
+	}
+
+	&__card {
+		& img {
+			width: 7vw;
+			height: 5vw;
+		}
+	}
+
+	&__text {
+		width: 10vw;
+		height: 10vw;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		color: #000;
+	}
+
+	&__uptext {
+		font-size: .9vw;
+	}
+
+	&__time {
+		font-size: 1.2vw;
+	}
+
+	&__map {
+		font-size: 1.5vw;
+	}
+
+	&-reverse {
+		flex-direction: row-reverse;
+	}
+}
+
+.cart-delivery {
+	position: relative;
+	z-index: 2;
+
+	&::before {
+		position: absolute;
+		content: "";
+		left: -2.5vw;
+		top: 4.5vw;
+		background-image: url(./../img/line/line.svg);
+		background-size: 3vw 1vw;
+		background-repeat: no-repeat;
+		width: 4.5vw;
+		height: 1vw;
+
+	}
+}
+
+.cart-pay {
+	position: relative;
+	z-index: 2;
+
+	&::before {
+		position: absolute;
+		content: "";
+		right: -2.5vw;
+		top: 4.5vw;
+		background-image: url(./../img/line/line.svg);
+		background-size: 3vw 1vw;
+		background-repeat: no-repeat;
+		width: 4.5vw;
+		height: 1vw;
+		transform: rotate(180deg);
+	}
+}

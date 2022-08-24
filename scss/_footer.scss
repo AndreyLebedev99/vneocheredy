@@ -1,0 +1,42 @@
+.footer {
+	margin-top: 5vw;
+	background: linear-gradient(270.19deg, #532A9F 14%, #5F46CF 92%);
+	&__row {
+		padding: 2vw 0;
+
+		display: flex;
+		align-items: center;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		color: #fff;
+	}
+
+	&__menu {
+		& ul {
+			display: flex;
+		}
+
+		& li+li {
+			padding-left: 4.5vw;
+		}
+	}
+
+	&__question {
+		& p {
+			padding-bottom: 15%;
+		}
+	}
+
+	&__search {
+		color: #fff;
+		border-color: #fff;
+		background-color: transparent;
+
+		width: 18vw;
+
+		&::placeholder {
+			color: #fff;
+		}
+	}
+}
+

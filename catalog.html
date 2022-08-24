@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Rubik:300,regular,500,600,700,800,900$display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="./js/ajax.js"></script>
+	<title>Вне очереди</title>
+</head>
+
+<body>
+	<div class="wrapper catalog__wrapper">
+		<header class="header header-catalog">
+			<div class="header__container">
+				<div class="header__row catalog-header__row">
+					<div class="header__search catalog-header__search">
+						<input type="text" class="search" id="search" style="color: #542a9f" placeholder="Поиск?">
+					</div>
+					<div class="header__question catalog-header__question question">
+						<p>Есть Вопросы?</p>
+						<a href="tel: +79046066747">+7 (904) 606-67-47</a>
+					</div>
+					<div class="header__logo catalog-header__logo">
+						<a href="main.html"><img src="./img/logo/logo.png" alt="" class="logo"></a>
+					</div>
+					<div class="header__menu catalog-header__menu">
+						<ul>
+							<li><a href="#">Как мы работаем</a></li>
+							<li><a href="#">Помощь</a></li>
+							<li><a href="#" data-open="openCart">Корзина</a></li>
+							<li><a href="#" data-open="openLogin">Войти</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="modal-login modal hidden" data-close="close">
+				<div class="modal-login__body modal-body">
+					<div class="modal-login__content modal-content">
+						<div class="modal-login__close modal-close" data-close="close">&#215;</div>
+						<div class="modal-login__header">
+							<ul>
+								<li><a href="#" class="login border-bottom" data-action="login">Войти</a></li>
+								<li><a href="#" class="registration" data-action="registration">Зарегистрироваться</a></li>
+							</ul>
+							<img src="./img/logo/mini-logo.png" alt="">
+						</div>
+						<form id="formLogin" class="form-login" action="#">
+							<div class="modal-login__row">
+								<p>Ваш логин</p>
+								<input type="text" name="username" class="search">
+							</div>
+		
+							<div class="modal-login__row">
+								<p>Ваш пароль</p>
+								<input type="password" name="userpass" class="search">
+							</div>
+		
+							<div class="sign-up">
+								<label class="switch">
+									<input type="checkbox" checked data-slider="active">
+									<span class="slider round"></span>
+									<span class="slider__yes slider-yes-active">YES</span>
+									<span class="slider__no">NO</span>
+								</label>
+								<p>Keep me sign up</p>
+							</div>
+		
+							<div class="line"></div>
+		
+							<div class="block-forgot">
+								<a href="#">Forgot your password</a>
+							</div>
+		
+							<div class="block-btn">
+								<button type="submit">Войти</button>
+							</div>
+						</form>
+		
+						<form id="formRegistration" class="form-registration hidden" action="#">
+							<div class="modal-login__row">
+								<p>Логин</p>
+								<input type="text" name="username" class="search">
+							</div>
+		
+							<div class="modal-login__row">
+								<p>Email</p>
+								<input type="text" name="usermail" class="search">
+							</div>
+		
+							<div class="modal-login__row">
+								<p>Телефон</p>
+								<input type="number" name="usertel" class="search">
+							</div>
+		
+							<div class="modal-login__row">
+								<p>Пароль</p>
+								<input type="password" name="userpass" class="search">
+							</div>
+		
+							<div class="modal-login__row">
+								<p>Повторите пароль</p>
+								<input type="password" name="userpass" class="search">
+							</div>
+		
+							<div class="line"></div>
+		
+							<div class="block-btn">
+								<button type="submit">Зарегистрироваться</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		
+			<div class="modal-cart modal hidden" data-close="close">
+				<div class="modal-cart__body modal-body">
+					<div class="modal-cart__content modal-content">
+		
+						<div class="modal-cart__page1">
+							<div class="modal-cart__close modal-close" data-close="close">&#215;</div>
+		
+							<div class="modal-cart__block">
+								<div class="modal-cart__scroll">
+								</div>
+							</div>
+		
+							<div class="modal-cart__column">
+								<div class="modal-cart__top">
+									<div class="modal-cart__clean">
+										<a href="#" class="modal-btn btn__clean">Очистить корзину</a>
+									</div>
+		
+									<div class="modal-cart__promo">
+										<div>Промокод</div>
+										<input type="password" class="promo__password">
+									</div>
+		
+									<div class="modal-cart__delivery">
+										<div>Доставка</div>
+										<div class="price__delivery">150 руб</div>
+									</div>
+								</div>
+		
+								<div class="modal-cart__bottom">
+									<div class="modal-cart__sum">
+										<div>Сумма заказа</div>
+										<div class="sum__price">0 руб</div>
+									</div>
+		
+									<div class="modal-cart__continue">
+										<a href="#" class="modal-btn btn__continue" data-continue="true">Продолжить</a>
+									</div>
+								</div>
+							</div>
+						</div>
+		
+						<div class="modal-cart__page2 hidden">
+							<div class="modal-cart__close modal-close" data-close="close">&#215;</div>
+							<div class="cart-word">Корзина</div>
+							<div class="modal-cart__body2">
+								<div class="modal-cart__block2"></div>
+								<div class="modal-cart__column">
+									<div class="modal-cart__top">
+										<div>
+											<p>Улица</p>
+											<input type="text" class="addres">
+										</div>
+										<div>
+											<p>Квартира</p>
+											<input type="text" class="addres">
+										</div>
+										<div>
+											<p>Парадная</p>
+											<input type="text" class="addres">
+										</div>
+										<div>
+											<p>Этаж</p>
+											<input type="text" class="addres">
+										</div>
+									</div>
+									<div class="modal-cart__bottom">
+										<div class="back-arrow" data-back="true">
+											<img src="./img/line/back.svg" alt="" data-back="true">
+										</div>
+										<div class="modal-cart__sum">
+											<div>Сумма заказа</div>
+											<div class="sum__price">0 руб</div>
+										</div>
+		
+										<div class="modal-cart__continue">
+											<a href="#" class="modal-btn btn__continue">Оформить заказ</a>
+										</div>
+									</div>
+								</div>
+							</div>
+		
+						</div>
+		
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<secerion class="catalog">
+				<div class="catalog__body">
+					<div class="catalog__container">
+						<div class="catalog__title">
+							<h1>Категории</h1>
+						</div>
+					</div>
+
+
+				</div>
+
+				<div class="carousel catalog-carousel swiper">
+					<div class="carousel-slider">
+						<div class="carousel__body swiper-wrapper">
+							<a href="catalog.html?category=vegetables" class="carousel-item catalog__item swiper-slide">
+								<div class="carousel-icon catalog__icon">
+									<img src="./img/icons/vegetables.svg" alt="" class="carousel__img catalog__img">
+								</div>
+								<div class="carousel-text catalog__text">
+									<p>Овощи</p><img src="./img/icons/arrow.svg" alt="">
+								</div>
+							</a>
+							<a href="catalog.html?category=milk" class="carousel-item catalog__item swiper-slide">
+								<div class="carousel-icon catalog__icon">
+									<img src="./img/icons/milk.svg" alt="" class="carousel__img catalog__img">
+								</div>
+								<div class="carousel-text catalog__text">
+									<p>Молоко</p><img src="./img/icons/arrow.svg" alt="">
+								</div>
+							</a>
+							<a href="catalog.html?category=meat" class="carousel-item catalog__item swiper-slide">
+								<div class="carousel-icon catalog__icon">
+									<img src="./img/icons/meat.svg" alt="" class="carousel__img catalog__img">
+								</div>
+								<div class="carousel-text catalog__text">
+									<p>Мясо</p><img src="./img/icons/arrow.svg" alt="">
+								</div>
+							</a>
+							<a href="catalog.html?category=fish" class="carousel-item catalog__item swiper-slide">
+								<div class="carousel-icon catalog__icon">
+									<img src="./img/icons/fish.svg" alt="" class="carousel__img catalog__img">
+								</div>
+								<div class="carousel-text catalog__text">
+									<p>Рыба</p><img src="./img/icons/arrow.svg" alt="">
+								</div>
+							</a>
+							<a href="catalog.html?category=tea" class="carousel-item catalog__item swiper-slide">
+								<div class="carousel-icon catalog__icon">
+									<img src="./img/icons/bottle.svg" alt="" class="carousel__img catalog__img">
+								</div>
+								<div class="carousel-text catalog__text">
+									<p>Вода</p><img src="./img/icons/arrow.svg" alt="">
+								</div>
+							</a>
+							<a href="catalog.html?category=sauces" class="carousel-item catalog__item swiper-slide">
+								<div class="carousel-icon catalog__icon">
+									<img src="./img/icons/bottle.svg" alt="" class="carousel__img catalog__img">
+								</div>
+								<div class="carousel-text catalog__text">
+									<p>Вода</p><img src="./img/icons/arrow.svg" alt="">
+								</div>
+							</a>
+							<a href="catalog.html?category=bread" class="carousel-item catalog__item swiper-slide">
+								<div class="carousel-icon catalog__icon">
+									<img src="./img/icons/bottle.svg" alt="" class="carousel__img catalog__img">
+								</div>
+								<div class="carousel-text catalog__text">
+									<p>Вода</p><img src="./img/icons/arrow.svg" alt="">
+								</div>
+							</a>
+						</div>
+						<div class="carousel-arrow__prev catalog-arrow swiper-button-prev"></div>
+						<div class="carousel-arrow__next catalog-arrow swiper-button-next"></div>
+					</div>
+				</div>
+
+				<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+				<script defer src="./js/slider.js"></script>
+
+				<div id="products" class="products scroll"></div>
+			</secerion>
+		</main>
+	</div>
+
+	
+
+	
+	<script src="./js/login.js"></script>
+	<script src="./js/slider.js"></script>
+	<script src="./js/counter.js"></script>
+	<script src="./js/calcCartPrice.js"></script>
+	<script src="./js/cart.js"></script>
+	<script src="./js/switch.js"></script>
+</body>
+
+</html>

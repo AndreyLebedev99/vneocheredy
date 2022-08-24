@@ -1,0 +1,46 @@
+.subtitle {
+	margin-top: 10vw;
+
+	width: 100vw;
+
+	position: relative;
+	
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+
+	&__go {
+		font-weight: 700;
+		font-size: 3.4vw;
+		line-height: 1.18;
+
+		transform: translateX(-10vw);
+		opacity: 0;
+		transition: all 1s ease;
+
+		&._active {
+			transform: translate(0px, 0px);
+			opacity: 1;
+		}
+	}
+
+	&__buys {
+		font-weight: 700;
+		font-size: 2.55vw;
+		line-height: 0.6;
+
+		transform: translateX(100px);
+		opacity: 0;
+		transition: all 1s ease;
+
+		&._active {
+			transform: translate(0px, 0px);
+			opacity: 1;
+		}
+	}
+}
+
+
+
